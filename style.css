@@ -1,0 +1,123 @@
+/* Mengatur jenis font menjadi Arial dengan cadangan sans-serif */
+body {
+    font-family: "Arial", sans-serif;
+    /* Menetapkan gambar latar belakang dengan URL */
+    background-image: url('https://i.pinimg.com/564x/db/42/25/db4225de3a38c08ff963b221ed6842c0.jpg');
+    /* Menyesuaikan gambar latar belakang agar mencakup seluruh body */
+    background-size: cover;
+    /* Posisi latar belakang di tengah */
+    background-position: center;
+    /* Menghapus margin dan padding default */
+    margin: 0;
+    padding: 0;
+}
+
+/* Gaya untuk tabel */
+table {
+    /* Menetapkan lebar tabel menjadi 80% dari kontainer dan posisinya di tengah secara horizontal */
+    width: 80%;
+    margin: 50px auto;
+    /* Menggabungkan batas antar sel tabel */
+    border-collapse: collapse;
+    /* Membuat sudut tabel melengkung */
+    border-radius: 20px;
+    /* Mengatur overflow agar konten tabel yang melebihi ukuran tetap tersembunyi */
+    overflow: hidden;
+    /* Menambahkan bayangan pada tabel */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    /* Menetapkan warna latar belakang tabel dengan tingkat kejelasan sebesar 80% */
+    background-color: rgba(200, 195, 195, 0.8);
+}
+
+/* Gaya untuk header (th) dan sel (td) dalam tabel */
+th, td {
+    /* Menambahkan jarak antara konten dan batas sel */
+    padding: 15px;
+    /* Menyusun teks ke kiri */
+    text-align: left;
+    /* Menambahkan garis bawah */
+    border-bottom: 1px solid #ddd;
+}
+
+/* Gaya untuk header (th) dalam tabel */
+th {
+    /* Menetapkan warna latar belakang header */
+    background-color: #333;
+    /* Menetapkan warna teks menjadi putih */
+    color: white;
+}
+
+/* Gaya untuk baris ganjil dalam tabel */
+tr:nth-child(even) {
+    /* Menetapkan warna latar belakang baris ganjil */
+    background-color: #b5aaaa;
+}
+
+/* Efek saat cursor mouse berada di atas baris */
+tr:hover {
+    /* Menetapkan warna latar belakang saat hover dengan warna abu-abu lebih gelap (#ddd) */
+    background-color: #ddd;
+}
+
+/* Gaya untuk gambar dalam tabel */
+img {
+    /* Maksimalkan lebar gambar agar tidak melebihi lebar konten */
+    max-width: 100%;
+    /* Menyesuaikan tinggi gambar agar proporsional */
+    height: auto;
+    /* Menampilkan gambar sebagai blok */
+    display: block;
+    /* Menengahkan gambar secara horizontal */
+    margin: 0 auto;
+    /* Melengkungkan sudut gambar */
+    border-radius: 10px;
+}
+
+/* Gaya untuk sel pada kolom ketiga dan keempat */
+td:nth-child(3), td:nth-child(4) {
+    /* Menetapkan lebar sel menjadi 100px */
+    width: 100px;
+    /* Maksimalkan lebar sel menjadi 100px */
+    max-width: 100px;
+    /* Mengatur overflow agar konten yang melebihi ukuran tetap tersembunyi */
+    overflow: hidden;
+    /* Menetapkan posisi relatif */
+    position: relative;
+}
+
+/* Efek saat cursor mouse berada di atas gambar pada kolom ketiga dan keempat */
+td:nth-child(3):hover img, td:nth-child(4):hover img {
+    /* Memperbesar gambar menjadi 1.1 kali ukuran aslinya */
+    transform: scale(1.1);
+    /* Efek transisi perubahan ukuran gambar selama 0.5 detik */
+    transition: transform 0.5s ease;
+    /* Menetapkan indeks z menjadi 1 */
+    z-index: 1;
+}
+
+/* Gaya untuk overlay hitam pada gambar pada kolom ketiga dan keempat */
+td:nth-child(3)::after, td:nth-child(4)::after {
+    /* Membuat elemen pseudo setelah sel */
+    content: "";
+    /* Menetapkan warna latar belakang menjadi hitam semi-transparan */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Menetapkan posisi absolut */
+    position: absolute;
+    /* Menetapkan posisi di atas gambar */
+    top: 0;
+    left: 0;
+    /* Menetapkan lebar dan tinggi sebesar 100% dari sel */
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    /* Menetapkan kejelasan (opacity) menjadi 0 */
+    opacity: 0;
+    /* Efek transisi opacity selama 0.5 detik */
+    transition: opacity 0.5s ease;
+}
+
+/* Efek saat cursor mouse berada di atas gambar pada kolom ketiga dan keempat */
+td:nth-child(3):hover::after, td:nth-child(4):hover::after {
+    /* Menetapkan kejelasan (opacity) menjadi 1 */
+    opacity: 1;
+}
